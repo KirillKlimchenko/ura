@@ -11,6 +11,12 @@ class HomePageDetail extends StatefulWidget {
 }
 
 class _HomePageDetailState extends State<HomePageDetail> {
+  //void _Case (){
+   // final ident = widget.did;
+   // Text('ddd $ident');
+   // Navigator.push(context, MaterialPageRoute(builder: (context) => CasePage()));
+  //
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +78,15 @@ class _HomePageDetailState extends State<HomePageDetail> {
                 ),
               ),
             ),
+          ),
+          Container(
+            child: ElevatedButton(
+              onPressed: (){},//_Case
+              child: Text('Задачи'),
+            ),
+          ),
+          SizedBox(
+            height: 40,
           ),
           SizedBox(
             height: 40,
@@ -187,12 +202,10 @@ class IconText extends StatelessWidget {
     );
   }
 }
-
 class BagianContact extends StatelessWidget {
   String phone, city, postal;
 
   BagianContact({required this.phone, required this.city, required this.postal});
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
