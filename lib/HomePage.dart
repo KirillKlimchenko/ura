@@ -5,7 +5,56 @@ import 'package:ura/HomePageDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
-
+Widget navDrawer(context) => Drawer(
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      DrawerHeader(
+        decoration: const BoxDecoration(
+          color:Colors.blue,
+        ),
+        child: Container(
+          height: 200,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 100,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(50.0))
+                ),
+                child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/330px-Google-flutter-logo.png'),
+              ),
+              const Text('Навигация во Flutter'),
+            ],
+          ),
+        ),
+      ),
+      ListTile(
+        leading: const Icon(Icons.one_k),
+        title: const Text('Авторизация'),
+        onTap: (){
+          Navigator.pushNamed(context, '/');
+        },
+      ),
+      const Divider(
+        thickness: 1,
+      ),
+      ListTile(
+        leading: const Icon(Icons.two_k),
+        title: const Text('Список пользователей'),
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        },
+      ),
+      const Divider(
+        color: Colors.black26,
+        thickness: 2,
+      ),
+    ],
+  ),
+);
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -50,6 +99,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page List User'),
         centerTitle: true,
       ),
+      drawer: navDrawer(context),
 
       body: Container(
         child: loading ? Center (child: CircularProgressIndicator()) : ListView.builder(

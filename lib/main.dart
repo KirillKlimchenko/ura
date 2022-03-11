@@ -34,7 +34,7 @@ class _PageHomeState extends State<PageHome> {
   void _auth() {
     final login = _loginText.text;
     final password = _passwordText.text;
-    if (login == 'admin' && password == 'admin') {
+    if (login == '8800930' && password == 'admin') {
       errorText = null;
       print('Open');
       Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
@@ -71,6 +71,9 @@ class _PageHomeState extends State<PageHome> {
               ),
               const SizedBox(height: 20),
               const Text('Введите логин в виде 10 цифр номера телефона',
+                  style: TextStyle(
+                      fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6))),
+              const Text('Логин:8800930 Пароль:admin',
                   style: TextStyle(
                       fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6))),
               const SizedBox(height: 20),
